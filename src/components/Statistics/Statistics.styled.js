@@ -4,6 +4,7 @@ export const Section = styled.section`
   width: 400px;
   margin: 0 auto;
   background-color: #fff;
+  margin-bottom: 30px;
 `;
 
 export const Title = styled.h2`

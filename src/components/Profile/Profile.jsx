@@ -19,15 +19,15 @@ export const Profile = ({user}) => {
 
                         <Stats >
                             <StatsItem>
-                                <Label class="label">Followers: </Label>
+                                <Label >Followers: </Label>
                                 <Quantity >{stats.followers}</Quantity>
                             </StatsItem>
                             <StatsItem>
-                                <Label class="label">Views: </Label>
+                                <Label >Views: </Label>
                                 <Quantity >{stats.views}</Quantity>
                             </StatsItem>
                             <StatsItem>
-                                <Label class="label">Likes: </Label>
+                                <Label >Likes: </Label>
                                 <Quantity >{stats.likes}</Quantity>
                             </StatsItem>
                         </Stats>

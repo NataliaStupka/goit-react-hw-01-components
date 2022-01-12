@@ -15,7 +15,7 @@ export const Avatar = styled.img`
   height: 140px;
   border-radius: 90px;
   padding: 10px;
-  background-color: rgb(225, 226, 226);
+  background-color: rgb(240, 242, 242);
 
   display: block;
   margin: 0px auto;
