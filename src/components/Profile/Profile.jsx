@@ -1,9 +1,10 @@
-import {UserProfile, Avatar, Description, Name, Tag, Location, Stats, StatsItem} from './Profile.styled.js'
+import {Container, UserProfile, Avatar, Description, Name, Tag, Location, Stats, StatsItem, Label, Quantity} from './Profile.styled.js'
+import PropTypes from 'prop-types';
 
 
 export const Profile = ({user}) => {
     return (
-        <div>
+        <Container>
             {user.map(({avatar, username, tag, location, stats}) =>
                 (<UserProfile key={username}>
                         <Description >
@@ -18,28 +19,39 @@ export const Profile = ({user}) => {
 
                         <Stats >
                             <StatsItem>
-                            <span class="label">Followers: </span>
-                            <span class="quantity">{stats.followers}</span>
+                                <Label class="label">Followers: </Label>
+                                <Quantity >{stats.followers}</Quantity>
                             </StatsItem>
                             <StatsItem>
-                            <span class="label">Views: </span>
-                            <span class="quantity">{stats.views}</span>
+                                <Label class="label">Views: </Label>
+                                <Quantity >{stats.views}</Quantity>
                             </StatsItem>
                             <StatsItem>
-                            <span class="label">Likes: </span>
-                            <span class="quantity">{stats.likes}</span>
+                                <Label class="label">Likes: </Label>
+                                <Quantity >{stats.likes}</Quantity>
                             </StatsItem>
                         </Stats>
                 </UserProfile>)
                 
             )}
-        </div>
+        </Container>
     );
 }
 
 
+// прописываем правильно ПРОПтайп для МАСИВА и обьекта
+Profile.propTypes = {
+    user: PropTypes.arrayOf(PropTypes.shape({
+        avatar: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
+        tag: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        
+    }))
+   
+}
 
 
 
-
+// stats: PropTypes.arrayOf(PropTypes.number).isRequired,
 
