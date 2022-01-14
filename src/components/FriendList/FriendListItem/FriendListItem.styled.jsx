@@ -1,10 +1,19 @@
 import styled from '@emotion/styled';
 
-export const Item = styled.div`
-display: flex;
-align-items: center;
-padding: 10px;
+
+// выбор цвета по статусу активен/неактивен
+export const Status = styled.span`
+color: ${props => props.userStatus ? 'green' : 'red'};
+margin-right: 20px;
 `
-export const MarkerGreen = styled.span`
-color: green;
+
+export const Avatar = styled.img`
+    margin-right: 15px;
+`
+export const Name = styled.p`
+font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.17;
+    color: rgb(39, 41, 41);
 `

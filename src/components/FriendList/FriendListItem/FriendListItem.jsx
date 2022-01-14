@@ -1,14 +1,15 @@
 import { BsFillCircleFill } from "react-icons/bs";
-import { Item, MarkerGreen } from './FriendListItem.styled'
+import { Status, Avatar, Name} from './FriendListItem.styled'
 
-
-export const FriendListItem = ({ avatar, name, isOnline}) => {
+// ----
+export const FriendListItem = ({ avatar, name, userStatus}) => {
     return (
-        <Item >
-            <span  className="status"><BsFillCircleFill /></span>
-            <img className="avatar" src={avatar} alt="User avatar" width="48" />
-            <p className="name">{name}</p>
-        </Item>
+        <>
+            <Status userStatus={userStatus}><BsFillCircleFill /></Status>
+            <Avatar src={avatar} alt="User avatar" width="48" />
+            <Name >{name}</Name>
+            
+        </>
         
     )
     

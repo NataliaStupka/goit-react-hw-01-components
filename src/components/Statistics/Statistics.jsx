@@ -10,10 +10,8 @@ export const Statistics = ({title, statistics}) => {
             <Container>
                 {statistics.map((statistic) => (
                 <StatList key={statistic.id} >
-                    <List >
-                        <span className="label">{ statistic.label}</span>
-                        <span className="percentage"> {statistic.percentage}</span>
-                    </List>
+                    <List className="label">{ statistic.label}</List>
+                    <List className="percentage"> {statistic.percentage}%</List>
                 </StatList>
 
         ))}
@@ -26,6 +24,7 @@ export const Statistics = ({title, statistics}) => {
 
 Statistics.propTypes = {
     title: PropTypes.string,
+    statistics: PropTypes.array.isRequired,
 }
 
 

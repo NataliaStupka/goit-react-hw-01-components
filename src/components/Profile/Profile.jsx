@@ -1,10 +1,10 @@
-import {Container, UserProfile, Avatar, Description, Name, Tag, Location, Stats, StatsItem, Label, Quantity} from './Profile.styled.js'
+import { UserProfile, Avatar, Description, Name, Text, Stats, StatsItem, Label, Quantity} from './Profile.styled.js'
 import PropTypes from 'prop-types';
 
-
+// ///
 export const Profile = ({user}) => {
     return (
-        <Container>
+        <>
             {user.map(({avatar, username, tag, location, stats}) =>
                 (<UserProfile key={username}>
                         <Description >
@@ -13,8 +13,8 @@ export const Profile = ({user}) => {
                                 alt={avatar}
                                 />
                             <Name>{username}</Name>
-                            <Tag >{tag}</Tag>
-                            <Location >{location}</Location>
+                            <Text>@{tag}</Text>
+                            <Text>{location}</Text>
                         </Description>
 
                         <Stats >
@@ -34,7 +34,7 @@ export const Profile = ({user}) => {
                 </UserProfile>)
                 
             )}
-        </Container>
+        </>
     );
 }
 
@@ -53,5 +53,5 @@ Profile.propTypes = {
 
 
 
-// stats: PropTypes.arrayOf(PropTypes.number).isRequired,
+
 
