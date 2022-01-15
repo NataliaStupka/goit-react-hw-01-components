@@ -27,6 +27,9 @@ let color = [
   '#a5193c',
   '#a55119',
   '#195aa5',
+  '#92c407',
+  '#f89c55',
+  '#d1cb04',
 ];
 const setBgColor = () => {
   return color[Math.floor(Math.random() * color.length)];

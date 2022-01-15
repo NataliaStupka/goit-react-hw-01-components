@@ -1,8 +1,10 @@
 import { Table } from './TransactionHistory.styled';
+import PropTypes from 'prop-types';
+import { type } from '@testing-library/user-event/dist/type';
 
 export const TransactionHistory = ({items}) => {
     return (
-        <Table class="transaction-history">
+        <Table>
             <thead>
                 <tr>
                 <th>Type</th>
@@ -27,4 +29,13 @@ export const TransactionHistory = ({items}) => {
 
 
 
- 
+ // прописать тип пропсов
+TransactionHistory.propTypes = {
+    TransactionHistory: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.string.isRequired,
+            currency: PropTypes.string.isRequired,
+        })),
+}
