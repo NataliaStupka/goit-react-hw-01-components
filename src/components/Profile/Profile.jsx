@@ -2,11 +2,9 @@ import { UserProfile, Avatar, Description, Name, Text, Stats, StatsItem, Label, 
 import PropTypes from 'prop-types';
 
 // ///
-export const Profile = ({user}) => {
+export const Profile = ({ username, tag, location, avatar,  stats }) => {
     return (
-        <>
-            {user.map(({avatar, username, tag, location, stats}) =>
-                (<UserProfile key={username}>
+                <UserProfile key={username}>
                         <Description >
                             <Avatar
                                 src={avatar}
@@ -31,30 +29,26 @@ export const Profile = ({user}) => {
                                 <Quantity >{stats.likes}</Quantity>
                             </StatsItem>
                         </Stats>
-                </UserProfile>)
-                
-            )}
-        </>
+                </UserProfile>
+         
     );
 }
 
 
+
+
 // прописываем правильно ПРОПтайп для МАСИВА и обьекта
 Profile.propTypes = {
-    user: PropTypes.arrayOf(PropTypes.shape({
-        avatar: PropTypes.string.isRequired,
-        username: PropTypes.string.isRequired,
-        tag: PropTypes.string.isRequired,
-        location: PropTypes.string.isRequired,
-        stats: PropTypes.shape({
-            followers: PropTypes.number.isRequired,
-            views: PropTypes.number.isRequired,
-            likes: PropTypes.number.isRequired,
-        }),
-    }))
-   
-}
-
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
+};
 
 
 
