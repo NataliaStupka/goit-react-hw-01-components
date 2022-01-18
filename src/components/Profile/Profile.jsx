@@ -37,7 +37,7 @@ export const Profile = ({ username, tag, location, avatar,  stats }) => {
 
 
 
-// прописываем правильно ПРОПтайп для МАСИВА и обьекта
+
 Profile.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
