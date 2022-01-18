@@ -7,6 +7,7 @@ import friends from '../data/friends.json';
 import {TransactionHistory} from './TransactionHistory/TransactionHistory'
 import transactions from '../data/transactions.json';
 import { Container } from './App.styled';
+import PropTypes from "prop-types";
 
 
 
@@ -22,4 +23,13 @@ export const App = () => {
                 <TransactionHistory items={transactions} />
             </Container> 
     );
+};
+
+
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.object.isRequired,
 };
